@@ -1,9 +1,9 @@
-export { future as theme } from 'mdx-deck/themes';
-import { Appear } from 'mdx-deck';
-import { CodeSurfer } from 'mdx-deck-code-surfer';
-import nightOwl from 'prism-react-renderer/themes/nightOwl';
+export { future as theme } from "mdx-deck/themes";
+import { Appear } from "mdx-deck";
 
-## Stay Suave with `styled-components`
+## Animating React
+
+### with Framer Motion
 
 <br />
 <br />
@@ -12,418 +12,82 @@ import nightOwl from 'prism-react-renderer/themes/nightOwl';
 
 #### Gareth Kloeden
 
-##### September 11, 2019
+##### February 12, 2020
 
 ---
 
-## CSS-in-JS
+## General Purpose Animation Libraries
 
 <Appear>
-  <p>Write your styles in your JavaScript</p>
-  <p>Tightly couple components with their styles</p>
-  <p>Do cool stuff with the full power of JavaScript</p>
-  <p>A heck of a lot better now than it used to be</p>
-  <p>Concept introduced in 2014 by Vjeux (Facebook engineer)</p>
+  <p>CSS animations & transitions</p>
+  <p>Greensock Animation Platform (GSAP)</p>
+  <p>Anime.js</p>
+  <p>Popmotion Pose</p>
 </Appear>
 
 ---
 
-## Many CSS-in-JS Libraries
-
-<img src="./assets/css-in-js-libraries.png" />
+## React-Specific
 
 <Appear>
-  <p>Emotion, JSS, Linaria, Aphrodite, Styletron, Radium, Glamorous...</p>
+  <p>ReactTransitionGroup (ReactCSSTransitionGroup)</p>
+  <p>React-Motion</p>
+  <p>React-Spring</p>
+  <p>React-Anime</p>
+  <p>Framer Motion</p>
 </Appear>
 
 ---
 
-## Historical Concerns
-
-<Appear>
-  <p>Weird JavaScript object camelCase syntax</p>
-  <p>Inline styles?</p>
-  <p>Prevents you from actually learning CSS</p>
-  <p>Hard to debug - no real class names</p>
-</Appear>
-
----
-
-<img src="./assets/spongebob-soc.jpg" />
-
-<Appear>
-  <p>(you're already writing JSX)</p>
-  <p>(think in components)</p>
-  <p>(alleviate the need for BEM, OOCSS, the like)</p>
-</Appear>
-
----
-
-## Really, Why Use CSS-in-JS?
-
-<img src="./assets/kent-c-dodds-quote.png" />
-
----
-
-## What is `styled-components`
-
-<img src="./assets/styled-components-logo.png" />
-
-<Appear>
-  <p>Directly style React components and HTML elements</p>
-  <h3>Why use over other CSS-in-JS libraries?</h3>
-  <p>Great API - write actual CSS</p>
-  <p>Under active development - always improving</p>
-  <p>Extremely flexible, incrementally adoptable</p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Example.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[
-    { range: [1, 22] },
-    { lines: [2] },
-    { range: [4, 12] },
-    { lines: [16, 18] },
-    { lines: [17] },
-    { range: [1, 22] },
-  ]}
-/>
-
----
-
-import Example from './components/Example';
-
-<Example />
-
----
-
-## Tagged Template Literals
-
-<Appear>
-  <p>An ES6 feature ``</p>
-  <p>Are actually functions!</p>
-  <p>
-    <code>styled.button``</code> is like <code>styled.button()</code> (but not identical!)
-  </p>
-  <p>
-    Can run <strong>interpolations</strong> - e.g. variables, functions
-  </p>
-</Appear>
-
----
-
-<CodeSurfer code={require('!raw-loader!./components/ttl.js')} lang="javascript" showNumbers={true} theme={nightOwl} />
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/ttlCool.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[{ range: [1, 8] }, { notes: 'Just believe that this lets you do cool stuff' }]}
-/>
-
----
-
-## Learn More!
-
-### Search "how does styled-components work"
-
----
-
-## Get Sassy
-
-<Appear>
-  <p>Supports full Sass-style nesting</p>
-  <p>
-    <strong>Not every element has to be a styled component</strong>
-  </p>
-  <p>You can still use classes</p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/ExampleTwo.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[
-    { range: [1, 40] },
-    { range: [4, 17] },
-    { range: [11, 17] },
-    { range: [25, 28] },
-    { range: [32, 36] },
-    { range: [19, 22] },
-  ]}
-/>
-
----
-
-import ExampleTwo from './components/ExampleTwo';
-
-<ExampleTwo />
-
----
-
-## Extending Components
-
-<Appear>
-  <p>Build styled components from other components</p>
-  <p>
-    <code>const Extended = styled(Base)``</code>
-  </p>
-  <p>Both other styled components and other React components...</p>
-  <p>...IF the React component passes the className prop</p>
-  <p>Works with some third-party components too (if they do above)</p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Extending.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[{ range: [1, 30] }, { range: [4, 9] }, { range: [11, 17] }, { range: [21, 26] }]}
-/>
-
----
-
-import Extending from './components/Extending';
-
-<Extending />
-
----
-
-## Props, Props, Props
-
-<Appear>
-  <p>Vary CSS properties based on props</p>
-  <p>Dynamic styles without manually modifying classes</p>
-  <p>
-    <code>$&#123;props => props.theProp&#125;</code>
-  </p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Classes.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[
-    { range: [1, 47] },
-    { range: [4, 18] },
-    { range: [11, 17] },
-    { range: [28, 45] },
-    { range: [29, 30] },
-    { range: [34, 36] },
-    { range: [38, 40] },
-    { range: [20, 26] },
-  ]}
-/>
-
----
-
-import Classes from './components/Classes';
-
-<Classes />
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Props.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[
-    { range: [1, 33] },
-    { range: [4, 12] },
-    { range: [9, 11] },
-    { range: [14, 31] },
-    { range: [20, 22] },
-    { range: [24, 26] },
-  ]}
-/>
-
----
-
-import Props from './components/Props';
-
-<Props />
-
----
-
-import Cool from './components/Cool';
-
-<Cool />
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Cool.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[{ range: [1, 46] }, { range: [17, 19] }, { range: [4, 12] }, { range: [28, 43] }, { range: [22, 24] }]}
-/>
-
----
-
-<Cool />
-
----
-
-## Animations
-
-<Appear>
-  <p>Transforms all work the same</p>
-  <p>
-    <code>keyframes</code> for using keyframes
-  </p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Keyframe.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[{ range: [1, 38] }, { lines: [2] }, { range: [4, 16] }, { lines: [27] }, { range: [30, 36] }]}
-/>
-
----
-
-import Keyframe from './components/Keyframe';
-
-<Keyframe />
-
----
-
-## Global Styles
-
+## Framer Motion
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="100"
+  height="100"
+  viewBox="0 0 100 100"
+>
+  <defs>
+    <linearGradient id="pink" gradientTransform="rotate(90 .5 .5)">
+      <stop offset="0" stop-color="#f08"></stop>
+      <stop offset="1" stop-color="#d0e"></stop>
+    </linearGradient>
+    <linearGradient id="purple" gradientTransform="rotate(90 .5 .5)">
+      <stop offset="0" stop-color="#91f"></stop>
+      <stop offset="1" stop-color="#40f"></stop>
+    </linearGradient>
+    <linearGradient id="blue" gradientTransform="rotate(90 .5 .5)">
+      <stop offset="0" stop-color="#09f"></stop>
+      <stop offset="1" stop-color="#05f"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M0 100V0l50 50z" fill="url(#pink)"></path>
+  <path d="M100 0v50l-50 50-25-25z" fill="url(#purple)"></path>
+  <path d="M100 50v50L75 75z" fill="url(#blue)"></path>
+</svg>
 <Appear>
   <p>
-    <code>createGlobalStyle</code> to create a global style component
+    "An open source React library to power production-ready animations. Design
+    fluid animations for the web, across desktop and mobile."
   </p>
-  <p>
-    (<code>injectGlobal</code> in older versions)
-  </p>
+  <p>The successor to Popmotion Pose</p>
 </Appear>
 
 ---
 
-<CodeSurfer
-  code={require('!raw-loader!./components/Global.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[
-    { range: [1, 41] },
-    { lines: [2] },
-    { range: [4, 16] },
-    { range: [25, 27] },
-    { range: [30, 39] },
-    { lines: [33] },
-  ]}
-/>
+## Examples
+
+<p>https://www.framer.com/motion/</p>
 
 ---
 
-import Global from './components/Global';
+## ~ Live Coding ~
 
-<Global />
-
----
-
-## Themes
-
-<Appear>
-  <p>
-    <code>ThemeProvider</code> component
-  </p>
-  <p>
-    Accepts a prop called <code>theme</code> that's an object
-  </p>
-  <p>Anything in the theme provider's tree has access to values in the theme</p>
-  <p>
-    <code>$&#123;props => props.theme.property&#125;</code>
-  </p>
-  <p>
-    <a href="https://medium.com/@garethbk/functional-styled-components-theme-helpers-d99dd4087596">
-      https://medium.com/@garethbk/functional-styled-components-theme-helpers-d99dd4087596
-    </a>
-  </p>
-  <p>(I prefer custom properties)</p>
-</Appear>
-
----
-
-<CodeSurfer
-  code={require('!raw-loader!./components/Theme.js')}
-  lang="javascript"
-  showNumbers={true}
-  theme={nightOwl}
-  steps={[{ range: [1, 31] }, { lines: [2] }, { range: [4, 9] }, { range: [14, 16] }, { range: [23, 27] }]}
-/>
-
----
-
-import Theme from './components/Theme';
-
-<Theme />
-
----
-
-## Other Stuff
-
-<Appear>
-  <p>
-    Supports server side rendering with <code>ServerStyleSheet</code>
-  </p>
-  <p>Works with React Native too!</p>
-  <p>
-    <code>babel-plugin-styled-components</code> gives you readable class names
-  </p>
-  <p>TypeScript supported with community-provided type definitions</p>
-</Appear>
-
----
-
-## `polished`
-
-<Appear>
-  <p>Another package that offers useful helpers</p>
-  <p>lighten, desaturate, rgba, etc. functions</p>
-  <p>Very similar to Sass functions</p>
-</Appear>
-
----
-
-## Drawbacks
-
-<Appear>
-  <p>Performance (maybe?)</p>
-  <p>Some things more annoying than Sass (e.g. themes)</p>
-  <p>No separate stylesheet files</p>
-  <p>Is a new paradigm to adjust to</p>
-</Appear>
+<img src="./assets/pikachu.png" />
 
 ---
 
 ## Thank you
 
-<p>https://stay-suave-with-styled-components.netlify.com</p>
-
-<p>https://github.com/garethpbk/stay-suave-with-styled-components</p>
-
+<p>https://github.com/garethpbk/framer-motion-pokedex</p>
 <p>@garethpbk on github, @garethbk everywhere else</p>
